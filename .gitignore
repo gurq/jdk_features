@@ -1,0 +1,44 @@
+HELP.md
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+
+### VS Code ###
+.vscode/
+
+# 忽略idea下所有文件
+.idea/
+# 忽略out下生成文件
+out/
+classes/
+# 忽略target下生成文件
+target/
+# 忽略项目.iml
+*.iml
+# 忽略word生成的临时文件
+~$*
+# 忽略lib下生成文件
+# 忽略.mvn下生成文件
+.mvn
