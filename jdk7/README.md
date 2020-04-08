@@ -1,11 +1,11 @@
-#JDK 7 新特性整理
+# JDK 7 新特性整理
 
-##1 官方文档
->https://www.oracle.com/technetwork/java/javase/jdk7-relnotes-418459.html
+## 1 官方文档
+> https://www.oracle.com/technetwork/java/javase/jdk7-relnotes-418459.html
 
-##2 不用怎么关心的改动
+## 2 不用怎么关心的改动
 
-###2.1 SWING
+### 2.1 SWING
 在JDK1.7中，对GUI进行了极大的改善，支持了3D，提升了性能，让Java制作图形化界面从不可能变成可能。
 
 比如大家再用的Jetbrains Idea就是完全基于SWING制作的
@@ -16,53 +16,51 @@
 
 >https://docs.oracle.com/javase/7/docs/technotes/guides/swing/enhancements-7.html
 
-###2.2 网络增强
+### 2.2 网络增强
 
->The URLClassLoader.close method has been added. 
+> The URLClassLoader.close method has been added. 
 
 增加了这么一个方法，说实话Java关于网络请求方面已经有很多很好用的包了，比如Requests/Jsoup/Hutool，所以这个我也不是很关心
 
-###2.3 安全性增强
+### 2.3 安全性增强
 
 对加密算法/SSL/TSL等作了诸多增强，详情参考官方文档
 
->https://docs.oracle.com/javase/7/docs/technotes/guides/security/enhancements-7.html
+> https://docs.oracle.com/javase/7/docs/technotes/guides/security/enhancements-7.html
 
-###2.4 Rich Internet Applications (RIA)
+### 2.4 Rich Internet Applications (RIA)
 
 跟applet有关的一些增强
 
->https://docs.oracle.com/javase/7/docs/technotes/guides/jweb/clientJRECapabilitiesCheatSheet.html
+> https://docs.oracle.com/javase/7/docs/technotes/guides/jweb/clientJRECapabilitiesCheatSheet.html
 
-###2.5 Java 2D
+### 2.5 Java 2D
 
 图形化能力增强
 
->https://docs.oracle.com/javase/7/docs/technotes/guides/2d/enhancements70.html
+> https://docs.oracle.com/javase/7/docs/technotes/guides/2d/enhancements70.html
 
-###2.6 Java XML
+### 2.6 Java XML
 
 Java解析XML方面的增强
 
->https://docs.oracle.com/javase/7/docs/technotes/guides/xml/enhancements.html
+> https://docs.oracle.com/javase/7/docs/technotes/guides/xml/enhancements.html
 
-###2.7 Internationalization 
+### 2.7 Internationalization 
 
 国际化方面的增强，增加了多个字符集支持
 
->https://docs.oracle.com/javase/7/docs/technotes/guides/intl/enhancements.7.html
+> https://docs.oracle.com/javase/7/docs/technotes/guides/intl/enhancements.7.html
 
-###2.8 Multithreaded Custom Class Loaders
+### 2.8 Multithreaded Custom Class Loaders
 
 消除了在多线程环境下的非层次话类加载时导致的潜在死锁
 
->https://docs.oracle.com/javase/7/docs/technotes/guides/lang/cl-mt.html
+> https://docs.oracle.com/javase/7/docs/technotes/guides/lang/cl-mt.html
 
+## 3 重点关心的改动
 
-
-##3 重点关心的改动
-
-###3.1 IO & NIO
+### 3.1 IO & NIO
 
 NIO大家应该都耳熟能详了，NIO就是New IO，是Java对IO操作更全面的支持，是本次更新之中的重中之重。
 
@@ -70,7 +68,7 @@ NIO大家应该都耳熟能详了，NIO就是New IO，是Java对IO操作更全�
 
 > https://ifeve.com/java-nio-all/
 
-###3.2 fork/join 模型
+### 3.2 fork/join 模型
 
 ForkJoinPool这个类是JDK7后新增的线程池，很适合在单机多核的PC上部署多线程程序。
 
@@ -102,7 +100,7 @@ ForkJoinPool的核心思想是工作窃取：
 
 ### 3.3 新语言特性
 
-####3.3.1 Binary Literals
+#### 3.3.1 Binary Literals
 
 数字类型（byte，short，int，和long）也可以使用二进制数字系统中表达。要指定二进制文字，请在数字前添加前缀0b或0B。以下示例显示二进制文字：
 
@@ -112,7 +110,7 @@ ForkJoinPool的核心思想是工作窃取：
     //一个16位的'short'值：
     short aShort =（short）0b1010000101000101;
     
- ####3.3.2 switch 支持 String 类型的条件
+ #### 3.3.2 switch 支持 String 类型的条件
  
  这个大家应该都用的很多了，不细说了
  
@@ -122,11 +120,11 @@ ForkJoinPool的核心思想是工作窃取：
              default:
     }
  
-####3.3.3 try-with-resources
+#### 3.3.3 try-with-resources
 
 以前在关闭资源的时候很麻烦，尤其是资源本身开启/关闭时会抛异常的时候。在Java7以后实现的更优雅了。
  
-####3.3.4 同时捕获多个异常
+#### 3.3.4 同时捕获多个异常
 
 从前：
 
