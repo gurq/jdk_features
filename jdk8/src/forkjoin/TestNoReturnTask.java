@@ -6,7 +6,7 @@ import java.util.concurrent.ForkJoinPool;
 public class TestNoReturnTask {
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-        ForkJoinPool pool = new ForkJoinPool(4);
+        ForkJoinPool pool = ForkJoinPool.commonPool();
         long startTime = System.currentTimeMillis();
         pool.invoke(new NoReturnTask(0, 50));
         long endTime = System.currentTimeMillis();
