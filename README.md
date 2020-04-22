@@ -1,2 +1,3 @@
-# jdk_features
-gurq/jdk_features
+# JDK7到JDK14版本更新导读
+
+只列举了重要的更新，并且只做导读，没有能力详解

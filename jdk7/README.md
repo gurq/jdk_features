@@ -1,4 +1,4 @@
-# JDK 7 新特性整理
+# JDK 7 新特性导读
 
 ## 1 官方文档
 > https://www.oracle.com/technetwork/java/javase/jdk7-relnotes-418459.html
