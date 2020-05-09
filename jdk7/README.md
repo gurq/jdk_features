@@ -103,9 +103,9 @@ ForkJoinPool的核心思想是工作窃取：
 
 其缺点是在某些情况下还是存在竞争，比如双端队列里只有一个任务时。并且消耗了更多的系统资源，比如创建多个线程和多个双端队列。
 
-![](img/fork_join_img_1.png)
+![](https://cdn.jsdelivr.net/gh/gurq/Cloud-Storage/blog/img/20200507102328.png)
 
-![](img/fork_join_img_2.png)
+![](https://cdn.jsdelivr.net/gh/gurq/Cloud-Storage/blog/img/20200507102338.png)
 
 >如图，提交队列位于哈希数组workQueue的奇数索引槽位，工作线程的工作队列位于偶数槽位，工作线程将分解的子任务推入工作队列的top端，取任务的时候也从top端取（凡是双端队列都会有两个分别指向队列两端的指针，这里就是图上画出的base和top），而当某些工作线程的任务为空的时候，就会从其他队列（不限于workQueue，也会是提交队列）窃取（steal）任务，如图示拥有workQueue2的工作线程从workQueue1中窃取了一个任务，窃取任务的时候采用的是先进先出FIFO的策略(即从base端窃取任务)，这样不但可以避免在取任务的时候与拥有其队列的工作线程发生冲突，从而减小竞争，还可以辅助其完成比较大的任务。
 

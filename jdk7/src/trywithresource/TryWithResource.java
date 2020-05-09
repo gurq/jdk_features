@@ -8,25 +8,27 @@ import java.io.IOException;
 public class TryWithResource {
 
     private void old() throws FileNotFoundException {
-            BufferedReader br = new BufferedReader(new FileReader("path"));
-            try {
-                br.readLine();
-            } catch (IOException e){
-                e.printStackTrace();
-            }finally {
-                if (br != null) {
-                    try {
-                        br.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+        BufferedReader br = new BufferedReader(new FileReader("path"));
+        try {
+            br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         }
+    }
 
-    private void now(){
-        try (BufferedReader br = new BufferedReader(new FileReader("path"))) {
+    private void now() {
+        try (BufferedReader br = new BufferedReader(new FileReader("path"));
+             BufferedReader br1 = new BufferedReader(new FileReader("path"))) {
             br.readLine();
+            br1.readLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
