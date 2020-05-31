@@ -8,6 +8,11 @@ public class Test {
     }
 
     private static String newSwitch(String event){
+        var text = """
+                你看，Java还能
+                这样
+                定义String哦
+                """;
         var log = switch (event) {
             case "1" -> "User has triggered the play button";
             case "2","3" -> "User needs a break";
